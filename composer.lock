@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "147e4614a07e494c1574bc2c811de4ef",
+    "content-hash": "59c8b64e29624be9b07f495b115b195e",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -193,12 +193,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nick-shared/php-http.git",
-                "reference": "ed7d2ed0362e3862f320fecb1d3678db29764bca"
+                "reference": "b03ef52d55b69490b76c613dbca36b959e456a82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nick-shared/php-http/zipball/ed7d2ed0362e3862f320fecb1d3678db29764bca",
-                "reference": "ed7d2ed0362e3862f320fecb1d3678db29764bca",
+                "url": "https://api.github.com/repos/nick-shared/php-http/zipball/b03ef52d55b69490b76c613dbca36b959e456a82",
+                "reference": "b03ef52d55b69490b76c613dbca36b959e456a82",
                 "shasum": ""
             },
             "require": {
@@ -212,6 +212,7 @@
                     "Mutant\\Http\\": "."
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Nick T-bone Kiermaier",
@@ -219,11 +220,7 @@
                 }
             ],
             "description": "Mutant Shared Packages.",
-            "support": {
-                "source": "https://github.com/nick-shared/php-http/tree/master",
-                "issues": "https://github.com/nick-shared/php-http/issues"
-            },
-            "time": "2018-01-01T19:13:56+00:00"
+            "time": "2018-01-02T00:39:40+00:00"
         },
         {
             "name": "mutant/string",
@@ -231,12 +228,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nick-shared/php-string.git",
-                "reference": "53288a27751b34e7d421902f1961845feab325e1"
+                "reference": "36114af799c0b32f1c7b5611d867db7073809918"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nick-shared/php-string/zipball/53288a27751b34e7d421902f1961845feab325e1",
-                "reference": "53288a27751b34e7d421902f1961845feab325e1",
+                "url": "https://api.github.com/repos/nick-shared/php-string/zipball/36114af799c0b32f1c7b5611d867db7073809918",
+                "reference": "36114af799c0b32f1c7b5611d867db7073809918",
                 "shasum": ""
             },
             "require": {
@@ -248,6 +245,7 @@
                     "Mutant\\String\\": "."
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Nick T-bone Kiermaier",
@@ -255,11 +253,7 @@
                 }
             ],
             "description": "Mutant Shared Packages.",
-            "support": {
-                "source": "https://github.com/nick-shared/php-string/tree/master",
-                "issues": "https://github.com/nick-shared/php-string/issues"
-            },
-            "time": "2018-01-01T18:54:18+00:00"
+            "time": "2018-01-02T00:39:54+00:00"
         },
         {
             "name": "psr/http-message",
