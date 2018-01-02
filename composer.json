@@ -1,0 +1,33 @@
+{
+  "name": "mutant/s3crawler",
+  "description": "Mutant S3Crawler.",
+  "type": "library",
+  "version": "1.0.0",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "Nick T-bone Kiermaier",
+      "email": "nickkiermaier@gmail.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/nick-shared/php-http.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/nick-shared/php-string.git"
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0",
+    "mutant/http": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mutant\\S3Crawler\\": "."
+    }
+  }
+}
