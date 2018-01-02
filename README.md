@@ -23,4 +23,4 @@
 ```
 
 
-3. Add `Mutant\S3Crawler\App\Helpers\S3CrawlerHelper;` to the top of your function.
+3. Add `use Mutant\S3Crawler\App\Helpers\S3CrawlerHelper;` to the top of your function.
