@@ -3,7 +3,7 @@ namespace Mutant\S3Crawler\App\Helpers;
 
 use Mutant\Http\App\Helpers\HttpHelper;
 
-class S3CrawlerHelper
+class S3Crawler
 {
 
     /**
@@ -33,45 +33,45 @@ class S3CrawlerHelper
      * @param $word
      * @return Pool
      */
-    public function getUrls($word)
+    public function run($word)
     {
-        $urls = $this->buildUrls($word);
-        $results = HttpHelper::asyncGet($urls);
+        $urls = $this->buildUrls($word);  // build/sanitize urls
+        $results = HttpHelper::asyncGet($urls); // async get the result
 
+        $s3results = [];
         foreach ($results as $key => $result) {
+            $response_state = $result['state'];
 
+            if($response_state == 'fulfilled'){
+                $response = $result['value'];
+            }
+            else{
+                $response = null;
+            }
+
+            $s3results[] = new S3CrawlerResult($word, $key, $response_state, $response);
         }
-
-
-        return $results;
+        return $s3results;
     }
 
     /**
      * @param $url_path
      * @return array
      */
-    public function buildUrls($url_path)
+    public function buildUrls($word)
     {
         // Sanitize the path
-        $url_path = HttpHelper::sanitizeUrlPath($url_path);
+        $word = HttpHelper::sanitizeUrlPath($word);
 
         // Build the array or URLs
         $out = [];
         foreach ($this->hosts as $host) {
-            $out[] = $host . "/{$url_path}";
+            $out[] = $host . "/{$word}";
         }
 
         // Sanitize the array of Urls
         $out = HttpHelper::validateUrlsGood($out);
         return $out;
-    }
-
-    public function isSuccessUrl($response)
-    {
-        $response['state'] = "fulfilled";
-        $response_body = (string)$response['value']->getBody();
-
-
     }
 
 

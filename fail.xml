@@ -1,0 +1,14 @@
+<!--https://s3-us-west-2.amazonaws.com/test-->
+<Error>
+    <Code>PermanentRedirect</Code>
+    <Message>
+        The bucket you are attempting to access must be addressed using the specified endpoint. Please send all future
+        requests to this endpoint.
+    </Message>
+    <Bucket>test</Bucket>
+    <Endpoint>s3.amazonaws.com</Endpoint>
+    <RequestId>EE77DA9A8EA08471</RequestId>
+    <HostId>
+        Q7dGcCOpNXRXf3hBN2wwHhEUGbMCzbOlUp22hkOnyiuB5b5uQvzG8tqeQ3ptOVPzWWeitIc7dWc=
+    </HostId>
+</Error>
