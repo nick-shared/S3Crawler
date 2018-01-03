@@ -13,8 +13,8 @@
   ],
   "require": {
     "php": ">=7.0.0",
-    "mutant/http": "*",
-    "mutant/file": "*"
+    "mutant/http": "dev-master",
+    "mutant/file": "dev-master"
   },
   "autoload": {
     "psr-4": {

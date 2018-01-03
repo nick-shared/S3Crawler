@@ -193,16 +193,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nick-shared/php-file.git",
-                "reference": "aa87c24a705dbb294a258f552331b038f651e700"
+                "reference": "5b1d65d7599a337d9bbd6cabb5a2fac3ca3129b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nick-shared/php-file/zipball/aa87c24a705dbb294a258f552331b038f651e700",
-                "reference": "aa87c24a705dbb294a258f552331b038f651e700",
+                "url": "https://api.github.com/repos/nick-shared/php-file/zipball/5b1d65d7599a337d9bbd6cabb5a2fac3ca3129b4",
+                "reference": "5b1d65d7599a337d9bbd6cabb5a2fac3ca3129b4",
                 "shasum": ""
             },
             "require": {
-                "mutant/string": "dev-master",
+                "mutant/string": "*",
                 "php": ">=7.0.0",
                 "ralouphie/mimey": "^1.0"
             },
@@ -220,7 +220,7 @@
                 }
             ],
             "description": "Mutant Shared Packages.",
-            "time": "2018-01-03T05:29:51+00:00"
+            "time": "2018-01-03T20:06:27+00:00"
         },
         {
             "name": "mutant/http",
@@ -228,17 +228,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nick-shared/php-http.git",
-                "reference": "ca9267faa7aa708f7599fb850aa456f85e69923c"
+                "reference": "ab9cacbe3c8c703256b851a42246d7d0d467bfb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nick-shared/php-http/zipball/ca9267faa7aa708f7599fb850aa456f85e69923c",
-                "reference": "ca9267faa7aa708f7599fb850aa456f85e69923c",
+                "url": "https://api.github.com/repos/nick-shared/php-http/zipball/ab9cacbe3c8c703256b851a42246d7d0d467bfb8",
+                "reference": "ab9cacbe3c8c703256b851a42246d7d0d467bfb8",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "~6.0",
-                "mutant/string": "dev-master",
+                "mutant/string": "*",
                 "php": ">=7.0.0"
             },
             "type": "library",
@@ -255,7 +255,7 @@
                 }
             ],
             "description": "Mutant Shared Packages.",
-            "time": "2018-01-02T18:58:54+00:00"
+            "time": "2018-01-03T19:41:57+00:00"
         },
         {
             "name": "mutant/string",
@@ -263,12 +263,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nick-shared/php-string.git",
-                "reference": "f0313bb80fafcfce9689ce96d41cf9a03cd2fc65"
+                "reference": "f185417ec6fa97422b9198caf0d609ece73aba88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nick-shared/php-string/zipball/f0313bb80fafcfce9689ce96d41cf9a03cd2fc65",
-                "reference": "f0313bb80fafcfce9689ce96d41cf9a03cd2fc65",
+                "url": "https://api.github.com/repos/nick-shared/php-string/zipball/f185417ec6fa97422b9198caf0d609ece73aba88",
+                "reference": "f185417ec6fa97422b9198caf0d609ece73aba88",
                 "shasum": ""
             },
             "require": {
@@ -288,7 +288,7 @@
                 }
             ],
             "description": "Mutant Shared Packages.",
-            "time": "2018-01-02T18:58:56+00:00"
+            "time": "2018-01-03T19:42:00+00:00"
         },
         {
             "name": "psr/http-message",
