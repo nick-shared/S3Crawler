@@ -20,5 +20,12 @@
     "psr-4": {
       "Mutant\\S3Crawler\\": "."
     }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Barryvdh\\Debugbar\\ServiceProvider"
+      ]
+    }
   }
 }
