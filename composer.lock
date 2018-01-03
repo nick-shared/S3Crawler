@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a353693b9c401549e47082e280078a3b",
+    "content-hash": "eea10815c99a4fcb7bb9f986f00f12e4",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -193,16 +193,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nick-shared/php-file.git",
-                "reference": "5b1d65d7599a337d9bbd6cabb5a2fac3ca3129b4"
+                "reference": "b28f6674399a45fb0bb063cf30f4eb4996998830"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nick-shared/php-file/zipball/5b1d65d7599a337d9bbd6cabb5a2fac3ca3129b4",
-                "reference": "5b1d65d7599a337d9bbd6cabb5a2fac3ca3129b4",
+                "url": "https://api.github.com/repos/nick-shared/php-file/zipball/b28f6674399a45fb0bb063cf30f4eb4996998830",
+                "reference": "b28f6674399a45fb0bb063cf30f4eb4996998830",
                 "shasum": ""
             },
             "require": {
-                "mutant/string": "*",
+                "mutant/string": "dev-master",
                 "php": ">=7.0.0",
                 "ralouphie/mimey": "^1.0"
             },
@@ -220,7 +220,7 @@
                 }
             ],
             "description": "Mutant Shared Packages.",
-            "time": "2018-01-03T20:06:27+00:00"
+            "time": "2018-01-03T20:54:04+00:00"
         },
         {
             "name": "mutant/http",
@@ -228,17 +228,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nick-shared/php-http.git",
-                "reference": "ab9cacbe3c8c703256b851a42246d7d0d467bfb8"
+                "reference": "95c481a47ed6ef4e4c7eeba6112a12e20d39b9d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nick-shared/php-http/zipball/ab9cacbe3c8c703256b851a42246d7d0d467bfb8",
-                "reference": "ab9cacbe3c8c703256b851a42246d7d0d467bfb8",
+                "url": "https://api.github.com/repos/nick-shared/php-http/zipball/95c481a47ed6ef4e4c7eeba6112a12e20d39b9d4",
+                "reference": "95c481a47ed6ef4e4c7eeba6112a12e20d39b9d4",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "~6.0",
-                "mutant/string": "*",
+                "mutant/string": "dev-master",
                 "php": ">=7.0.0"
             },
             "type": "library",
@@ -255,7 +255,7 @@
                 }
             ],
             "description": "Mutant Shared Packages.",
-            "time": "2018-01-03T19:41:57+00:00"
+            "time": "2018-01-03T20:54:08+00:00"
         },
         {
             "name": "mutant/string",
