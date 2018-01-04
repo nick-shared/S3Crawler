@@ -75,15 +75,17 @@ class S3BucketCrawlerCommand extends Command
             // run the crawler
             $results = $s3crawler->run($word);
 
+            dd($results);
 
             // process the results
             foreach ($results as $result) {
+                $current_bucket  = $result->bucketname;
 
                 // update the process log table
                 $s3process->update([
                     'current_line_number' => $line_number,
                     'current_word' => $word,
-                    'current_bucket' => $result->bucketname
+                    'current_bucket' => $current_bucket
                 ]);
 
                 // Record successful open buckets
