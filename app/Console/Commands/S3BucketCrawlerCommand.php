@@ -7,7 +7,8 @@ use Illuminate\Console\Command;
 use Mutant\S3Crawler\App\Helpers\S3Crawler as S3C;
 use Mutant\File\App\Helpers\File as MutantFile;
 use Mutant\File\App\Helpers\FileHelper as MutantFileHelper;
-use App\Models\S3openbucket;
+use Mutant\S3Crawler\App\Models\S3openbucket;
+use Mutant\S3Crawler\App\Models\S3failbucket;
 
 class S3BucketCrawlerCommand extends Command
 {
@@ -44,10 +45,9 @@ class S3BucketCrawlerCommand extends Command
     {
         $input_file = $this->option('inputfile');
 
-        if (!MutantFileHelper::fileExists($input_file)) {
-            $this->error('No file exists by that name!');
+        if (!isset($input_file) || !MutantFileHelper::fileExists($input_file)) {
+            $this->error('Please enter a valid filename!');
         }
-
 
         $input_file = new MutantFile($input_file);
         $s3crawler = new S3C();
@@ -56,12 +56,17 @@ class S3BucketCrawlerCommand extends Command
             $next_name = $input_file->getLineDataAndAdvance();
             $results = $s3crawler->run($next_name);
 
-            // process results
             foreach ($results as $result) {
+                // Record successful open buckets
                 if ($result->status == 'success') {
-                       $properties = get_object_vars($result);
-                       S3openbucket::create($properties);
-                       continue;
+                    $properties = get_object_vars($result);
+                    S3openbucket::create($properties);
+                    continue;
+                }
+                // Note: this records failed connections
+                if ($result->guzzle_response_state != 'fulfilled') {
+                    $properties = get_object_vars($result);
+                    S3failbucket::create($properties);
                 }
             }
         }
