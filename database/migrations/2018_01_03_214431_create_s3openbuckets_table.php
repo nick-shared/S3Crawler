@@ -16,7 +16,7 @@ class CreateS3openbucketsTable extends Migration
             $table->increments('id');
             $table->string('status')->nullable();
             $table->string('error_messages')->nullable();
-            $table->string('bucketname')->nullable();
+            $table->string('bucketname')->nullable()->unique();
             $table->string('search_word')->nullable();
             $table->text('response')->nullable();
             $table->string('is_truncated')->nullable();

@@ -70,7 +70,8 @@ class S3BucketCrawlerCommand extends Command
 
             // get information variables
             $word = $input_file->getLineDataAndAdvance();
-            $word = trim($word);
+            $word = trim($word);  //removes all carriage returns, line breaks for comparison purposes
+
             // try to performantly prevent dupes(works great on sorted files)
             // https://stackoverflow.com/questions/18443144/how-to-perform-sort-on-all-files-in-a-directory
             if ($word == $last_word) {
@@ -81,7 +82,6 @@ class S3BucketCrawlerCommand extends Command
             }
 
             $line_number = $input_file->getLineNumber();
-
 
             // run the crawler
             $results = $s3crawler->run($word);
@@ -101,7 +101,7 @@ class S3BucketCrawlerCommand extends Command
                 if ($result->status == 'success') {
                     $properties = get_object_vars($result);
                     unset($properties['response']);
-                    S3openbucket::create($properties);
+                    @S3openbucket::create($properties);
                     continue;
                 }
 
