@@ -74,12 +74,12 @@ class S3BucketCrawlerCommand extends Command
 
             // try to performantly prevent dupes(works great on sorted files)
             // https://stackoverflow.com/questions/18443144/how-to-perform-sort-on-all-files-in-a-directory
-            if ($word == $last_word) {
-                $last_word=$word;
-                continue;
-            }else{
-                $last_word=$word;
-            }
+//            if ($word == $last_word) {
+//                $last_word=$word;
+//                continue;
+//            }else{
+//                $last_word=$word;
+//            }
 
             $line_number = $input_file->getLineNumber();
 
