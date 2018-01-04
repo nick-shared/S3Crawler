@@ -1,11 +1,11 @@
-# A couple of merged /etc/hosts files -- Klein's and Oxford's.
-# The /etc/hosts file, with some severe hacking done to it.
 #
+#
+# A couple of merged /etc/hosts files -- Klein's and Oxford's.
 # Notably, a.foo-baz.what.edu has been split out as 5 words:
+# The /etc/hosts file, with some severe hacking done to it.
+# argus.stanford.edu:/netinfo/hosts.txt dated 6/25/92
 # foo, foo-baz, foobaz, what, and edu.  The "a" was not included
 # since it was only a single letter.
-#
-# argus.stanford.edu:/netinfo/hosts.txt dated 6/25/92
 ###############################################################################
 009b
 101a

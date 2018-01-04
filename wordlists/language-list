@@ -1,11 +1,9 @@
-################################################################################
-# from Bill Kinnersley's Language List 2.2
 # Don Olivier, Harvard School of Public Health 	   don@hsph.harvard.edu
+# from Bill Kinnersley's Language List 2.2
+################################################################################
 ################################################################################
 *LISP
 *MOD
-\20-GATE
-\9PAC
 A'UM
 AADL
 ABC
@@ -81,8 +79,8 @@ APAL
 APAREL
 APDL
 APL
-APL\2
 APLGOL
+APL\2
 APPLE
 APPLOG
 APT
@@ -701,10 +699,10 @@ IDMS
 IDOL
 IDS/I
 IF1
-IF\2
 IFIP
 IFP
 IFX
+IF\2
 IGL
 IIS
 IITRAN
@@ -747,7 +745,6 @@ Ironman
 Isabelle-92
 Ivan
 J3
-J\73
 JACAL
 JAZ
 JCL
@@ -759,6 +756,7 @@ JPL
 JPLDIS
 JS
 JTS
+J\73
 JaM
 Jade
 Janus
@@ -787,14 +785,12 @@ Karel
 Kevo
 Kid
 L&O
-L\0
-L\6
 LADY
 LAMBDA
 LAMINA
 LAP
-LAP\4
 LAPSE
+LAP\4
 LARCH/CLU
 LAU
 LAURE
@@ -861,6 +857,8 @@ LUSTRE
 LYNX
 LYRIC
 LYaPAS
+L\0
+L\6
 LaTeX
 Lace
 Lakota
@@ -888,9 +886,6 @@ Lucinda
 Lucy
 M-Code
 M-Prolog
-M\3
-M\4
-M\5
 MAC
 MAC-360
 MACE
@@ -963,6 +958,9 @@ MUCAL
 MUMPS
 MUSL
 MYSTIC
+M\3
+M\4
+M\5
 Mac-1
 MacLisp
 Macaulay
@@ -1000,8 +998,8 @@ Modula
 Modula-2
 Modula-2*
 Modula-2+
-Modula-\3
 Modula-\*
+Modula-\3
 Modula-\pi
 Modula/R
 Modulex
@@ -1055,7 +1053,6 @@ Nqthm
 Nroff
 Nuprl
 O'small
-O\2
 OBE
 OBJ
 OBJ\2
@@ -1084,6 +1081,7 @@ OSCAR
 OSQL
 OSSL
 OWHY
+O\2
 Oaklisp
 Oberon
 Oberon-2
@@ -1110,7 +1108,6 @@ P+
 P-Prolog
 P-TAC
 P-code
-P\4
 PACTOLUS
 PAGE
 PAISley
@@ -1161,8 +1158,6 @@ PL/P
 PL/PROPHET
 PL/S
 PL/Seq
-PL\360
-PL\516
 PLACE
 PLAGO
 PLAIN
@@ -1177,6 +1172,8 @@ PLUM
 PLUS
 PLUSS
 PLZ
+PL\360
+PL\516
 PM
 PML
 PNU-Prolog
@@ -1223,6 +1220,7 @@ PSML
 PUB
 PUFFT
 PVM
+P\4
 Paddle
 PaiLisp
 Pam
@@ -1242,13 +1240,13 @@ Parsley
 Pascal
 Pascal+CSP
 Pascal-
-Pascal-\2
-Pascal-\80
 Pascal-F
 Pascal-FC
 Pascal-P
 Pascal-S
 Pascal-SC
+Pascal-\2
+Pascal-\80
 Pascal-m
 Pascal/L
 Pascal/R
@@ -1364,7 +1362,6 @@ Ruby
 Russell
 S-Algol
 S-Lang
-S\3
 SAC
 SAC-1
 SAC\2
@@ -1513,6 +1510,7 @@ SYMBOLANG
 SYMPL
 SYN
 SYSLISP
+S\3
 Sandman
 Sather
 Sather-K
@@ -1734,6 +1732,8 @@ Zed
 ZetaLisp
 Zipcode
 Zuse
+\20-GATE
+\9PAC
 bash
 bawk
 condela

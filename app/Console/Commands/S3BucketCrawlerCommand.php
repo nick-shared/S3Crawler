@@ -64,23 +64,32 @@ class S3BucketCrawlerCommand extends Command
         ]);
 
 
+        $last_word = "";
         //process loop
         while (!$input_file->eof()) {
 
             // get information variables
             $word = $input_file->getLineDataAndAdvance();
+
+            // try to performantly prevent dupes(works great on sorted files)
+            // https://stackoverflow.com/questions/18443144/how-to-perform-sort-on-all-files-in-a-directory
+            if ($word == $last_word) {
+                $last_word=$word;
+                continue;
+            }else{
+                $last_word=$word;
+            }
+
             $line_number = $input_file->getLineNumber();
 
 
             // run the crawler
             $results = $s3crawler->run($word);
 
-            dd($results);
-
             // process the results
             foreach ($results as $result) {
-                $current_bucket  = $result->bucketname;
-
+                $current_bucket = $result->bucketname;
+   
                 // update the process log table
                 $s3process->update([
                     'current_line_number' => $line_number,
@@ -96,8 +105,8 @@ class S3BucketCrawlerCommand extends Command
                     continue;
                 }
 
-                // Note: this records failed connections only
-                // Recording closed buckets would get into the hundreds of millions
+                // Note: this records failed guzzle connections only
+                // Recording all closed buckets would get into the hundreds of millions
                 if ($result->guzzle_response_state != 'fulfilled') {
                     $properties = get_object_vars($result);
                     S3failbucket::create($properties);

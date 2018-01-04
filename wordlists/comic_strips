@@ -1,23 +1,31 @@
-################################################################################
+#
+#
+#
+#
 # Comic strips from Douglas Krause's files at UCI 
 # Don Olivier	don@hsph.harvard.edu
-################################################################################
-#
+# some characters and miscellany
 # titles
-#
+################################################################################
+################################################################################
 Abbie an' Slats
 Abbott and Costello
+Abra Cadaver
 Academia Waltz
 Adam
 Agatha Crumm
+Akbar
+Ala Ka Zot
 Alex
 Alex's Restaurant
 Alley Oop
 Andy Capp
 Animal Crackers
+Arlo
 Arlo and Janis
 Asterix
 Augusta
+B.C.
 B.C.
 Baby Blues
 Back Bench
@@ -31,19 +39,27 @@ Belvedere
 Betty Boop
 Beyond Mars
 Big Nate
+Bimbo
 Bizarro
+Bleachers
+Blondie
 Blondie
 Bloom County
 Bobby Thatcher
+Bodkins
 Boner's Ark
+Boop
 Brenda Starr
 Brick Bradford
 Brimstone
 Broom Hilda
 Buck Rogers
+Buckaroo
 Buckets
 Bull Tales
+Buz
 Buz Sawyer
+CYBeRpuNkTrEK
 Caldwell
 Callahan
 Calvin and Hobbes
@@ -51,9 +67,13 @@ Captain Vincible
 Carol
 Casey Ruggles
 Cathy
+Charlie Brown
 Charlie Chan
+Cisco
+Cloggies
 Close to Home
 Collage Review
+Comeek
 Conchy
 Connie
 Conrad
@@ -61,25 +81,34 @@ Crankshaft
 Crime Crushers
 Crock
 Crock
+Crumm
 Curious Avenue
 Curtis
+Dagwood
 Dauntless Durham
 Dennis the Menace
 Dick Tracy
 Dickie Dare
 Dilbert
+Dogpatch
 Donald Duck
 Doonesbury
 Downstown
 Drabble
+Dragon Lady
 Dreams of the Rarebit Fiend
 Duffy
+Dunagin
 Dunagin's People
 Dupie
 Dykes to Watch Out For
 Edge
+Eek
 Eek & Meek
 Eggbert
+Eggbert
+Ernie
+Ernie
 Ernie
 Ernie Pook's Comeek
 Everett True
@@ -89,51 +118,68 @@ Farcus
 Farley
 Farm Report
 FatKat
+Fearless Fosdick
 Feiffer
 Felix the Cat
 Fido Dido
 Filstrup
+Flapjacks
 Flash Gordon
 Flyin' Jenny
+Footrot
 Footrot Flats
 For Better or For Worse
 For Better or For Worse
 For Better or for Worse
 FoxTrot
+Frammin
 Frank and Ernest
 Frazetta
+Frippin
 Funky Winkerbean
+Fusco
 Fusco Brother
 Fusco Brothers
+Fussbudget
 Gahan Wilson's Sunday Comics
 Garfield
 Gasoline Alley
 Geech
+Google
 Gordo
 Graves, Inc.
 Guindon
+Gumps
 Hagar
 Happy Hooligan
+Harry Chess
 Hartland
 Hazel
 Heathcliff
 Hepcats
 Herman
 Hi & Lois
+Hipshot
 Hollenhead
 Horrorscope
 Howard Huge
+Ignatz
 In the Bleachers
 James Bond
 Jane
+Jiggs
 Jim's Journal
+Jim-Jam
 Johnny Hazard
 Juliet Jones
 Jungle Jim
+Katzenjammer
 Katzenjammer Kids
 King Aroo
 King Kat
+Krazy
 Krazy Kat
+Krotz
 Kudzu
 Lady Luck
 Li'l Abner
@@ -164,6 +210,7 @@ Modesty Blaise
 Moose
 Morgan Calabrese
 Mother Goose & Grimm
+Motley
 Mountain Boys
 Mr. Boffo
 Mr. Mum
@@ -174,22 +221,29 @@ Myra North
 Nancy
 Nantucket
 Nellie the Nurse
+Netzahaulcoyotl
+Nguyen
 Nguyen Charlie
 Nina's Adventures
 No Comment
 Non Sequitur
 Norb
+Norts Spews
 Odd Bodkins
 Off the Leash
 On Stage
 On the Fast Track
+Oop
 Outland
 Overboard
+Palliard
 Palliard Press
+Passionella
 Pavlov
 Peanuts
 Perry Mason
 Phantom
+Phil & Dixie
 Pogo
 Pogo
 Polly & Her Pals
@@ -197,30 +251,43 @@ Popeye
 Popeye
 President Bill
 Prince Valiant
+Quigmans
 Quincy's World
 Real Life Adventures
 Rick O'Shay
+Rick O'Shay
 Rip Kirby
+Robotman
 Robotman
 Rose is Rose
 Rubes
 Rudy
 Sad Sack
 Sally Forth
+Sarge
 Scorchy Smithe
 Secret Agent Corrigan
 Sgt. Mike
 Sherlock Holmes
+Sherlocko
 Sherlocko the Monk
+Shmoo
 Shoe
 Silly Symphonies
 Skippy
+Slats
+Slobbovia
+Sluggo
+Slumberland
 Slump
 Small Society
 Smilin' Jack
 Smokey Stover
 Snake
+Snoopy
+Speed Walker
 Speed Walker, Private Eye
+Spider-man
 Steve Canyon
 Steve Roper
 Stockworth
@@ -229,6 +296,7 @@ Sylvia
 Table Talk
 Tank McNamara
 Tarzan
+Televangelist
 Terry and the Pirates
 That's Jake
 Thatch
@@ -255,19 +323,24 @@ Thorn
 Tiger
 Tim Tyler
 Tom the Dancing Bug
+Toonerville
 Toonerville Trolley
 Treasury of Classic Tales
 Tumbleweeds
 U.S. Acres
+Vincible
 Wash Tubbs & Capt. Easy
 Washingtoon
 Wee Pals
 What Were You In A Previous Life?
+What's New?
 What's New? the collected adventures of Phil & Dixie
 When I Was Short...
 Where I'm Coming From
 Wild Life
+Will B. Dunn
 Willy'n'Ethel
+Winkerbean
 Wizard of Id
 Wolff & Byrd
 Woody Allen
@@ -278,79 +351,6 @@ Zen Comics
 Ziggy
 Zippy
 Zorro
-the bus
 counter culture
+the bus
 the neighborhood
-#
-# some characters and miscellany
-#
-Abra Cadaver
-Akbar
-Ala Ka Zot
-Arlo
-B.C.
-Bimbo
-Bleachers
-Blondie
-Bodkins
-Boop
-Buckaroo
-Buz
-CYBeRpuNkTrEK
-Charlie Brown
-Cisco
-Cloggies
-Comeek
-Crumm
-Dagwood
-Dogpatch
-Dragon Lady
-Dunagin
-Eek
-Eggbert
-Ernie
-Ernie
-Fearless Fosdick
-Flapjacks
-Footrot
-Frammin
-Frippin
-Fusco
-Fussbudget
-Google
-Gumps
-Harry Chess
-Hipshot
-Ignatz
-Jiggs
-Jim-Jam
-Katzenjammer
-Krazy
-Krotz
-Motley
-Netzahaulcoyotl
-Nguyen
-Norts Spews
-Oop
-Palliard
-Passionella
-Phil & Dixie
-Quigmans
-Rick O'Shay
-Robotman
-Sarge
-Sherlocko
-Shmoo
-Slats
-Slobbovia
-Sluggo
-Slumberland
-Snoopy
-Speed Walker
-Spider-man
-Televangelist
-Toonerville
-Vincible
-What's New?
-Will B. Dunn
-Winkerbean
