@@ -10,6 +10,7 @@ use Mutant\File\App\Helpers\FileHelper as MutantFileHelper;
 use Mutant\S3Crawler\App\Models\S3openbucket;
 use Mutant\S3Crawler\App\Models\S3failbucket;
 use Mutant\S3Crawler\App\Models\S3crawlerprocess as S3Cprocess;
+use Mutant\Http\App\Helpers\HttpHelper;
 
 class S3BucketCrawlerCommand extends Command
 {
@@ -71,7 +72,9 @@ class S3BucketCrawlerCommand extends Command
 
                 // get information variables
                 $word = $input_file->getLineDataAndAdvance();
-                $word = trim($word);  //removes all carriage returns, line breaks for comparison purposes
+                // Remove non-URL-allowed characters according to RFC 3986
+                // (this also prevents mysql from freaking out with non-Unicode chars)
+                $word = HttpHelper::sanitizeUrlPath($word);
 
                 // try to performantly prevent dupes(works great on sorted files)
                 // https://stackoverflow.com/questions/18443144/how-to-perform-sort-on-all-files-in-a-directory
@@ -82,7 +85,9 @@ class S3BucketCrawlerCommand extends Command
                     $last_word = $word;
                 }
 
+                // get line number
                 $line_number = $input_file->getLineNumber();
+
                 // run the crawler
                 $results = $s3crawler->run($word);
 
@@ -106,7 +111,7 @@ class S3BucketCrawlerCommand extends Command
                         // note: done this way for theoretical performance reasons
                         // theres a unique index, so we don't want to check
                         // existence for every request over millions of records with Laravel
-                        // Let SQL handle this
+                        // Let SQL handle this. (I may be incorrect about this.)
                         try {
                             S3openbucket::create($properties);
                         } catch (\Throwable $e) {
@@ -116,7 +121,7 @@ class S3BucketCrawlerCommand extends Command
                     }
 
                     // Note: this records failed guzzle connections only
-                    // Recording all closed buckets would get into the hundreds of millions
+                    // Recording all non-public buckets would get into the hundreds of millions
                     if ($result->guzzle_response_state != 'fulfilled') {
                         $properties = get_object_vars($result);
                         S3failbucket::create($properties);
