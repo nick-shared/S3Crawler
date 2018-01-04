@@ -44,9 +44,10 @@ class S3BucketCrawlerCommand extends Command
      */
     public function handle()
     {
+
         // File stuff
         $input_file_name = $this->option('inputfile');
-        if (!isset($input_file) || !MutantFileHelper::fileExists($input_file)) {
+        if (!isset($input_file_name) || !MutantFileHelper::fileExists($input_file_name)) {
             $this->error('Please enter a valid filename!');
             return;
         }
