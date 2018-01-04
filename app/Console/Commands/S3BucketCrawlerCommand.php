@@ -70,7 +70,7 @@ class S3BucketCrawlerCommand extends Command
 
             // get information variables
             $word = $input_file->getLineDataAndAdvance();
-
+            $word = trim($word);
             // try to performantly prevent dupes(works great on sorted files)
             // https://stackoverflow.com/questions/18443144/how-to-perform-sort-on-all-files-in-a-directory
             if ($word == $last_word) {
@@ -89,7 +89,7 @@ class S3BucketCrawlerCommand extends Command
             // process the results
             foreach ($results as $result) {
                 $current_bucket = $result->bucketname;
-   
+
                 // update the process log table
                 $s3process->update([
                     'current_line_number' => $line_number,
