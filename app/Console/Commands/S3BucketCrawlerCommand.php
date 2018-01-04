@@ -101,7 +101,16 @@ class S3BucketCrawlerCommand extends Command
                 if ($result->status == 'success') {
                     $properties = get_object_vars($result);
                     unset($properties['response']);
-                    @S3openbucket::create($properties);
+
+                    // note: done this way for theoretical performance reasons
+                    // theres a unique index, so we don't want to check
+                    // existence for every request over millions of records
+                    // Let SQL handle this
+                    try {
+                        S3openbucket::create($properties);
+                    }catch(\Throwable $e){
+                        continue;
+                    }
                     continue;
                 }
 
