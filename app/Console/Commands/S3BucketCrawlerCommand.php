@@ -43,24 +43,29 @@ class S3BucketCrawlerCommand extends Command
      */
     public function handle()
     {
-        $input_file = $this->option('inputfile');
+        $input_file_name = $this->option('inputfile');
 
         if (!isset($input_file) || !MutantFileHelper::fileExists($input_file)) {
             $this->error('Please enter a valid filename!');
         }
 
-        $input_file = new MutantFile($input_file);
+        $input_file = new MutantFile($input_file_name);
+
         $s3crawler = new S3C();
+        $s3crawlerprocess = new S3Cprocess();
 
         while (!$input_file->eof()) {
-            $next_name = $input_file->getLineDataAndAdvance();
-            $results = $s3crawler->run($next_name);
+            $word = $input_file->getLineDataAndAdvance();
+            $line_number = $input_file->getLineNumber();
+            $results = $s3crawler->run($word);
 
             foreach ($results as $result) {
                 // Record successful open buckets
                 if ($result->status == 'success') {
                     $properties = get_object_vars($result);
                     unset($properties['response']);
+
+
                     S3openbucket::create($properties);
                     continue;
                 }
