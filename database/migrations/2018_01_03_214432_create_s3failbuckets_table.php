@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateS3openbucketsTable extends Migration
+class CreateS3failbucketsTable extends Migration
 {
     /**
      * Run the migrations.
