@@ -2,7 +2,7 @@
   "name": "mutant/s3crawler",
   "description": "Mutant S3Crawler.",
   "type": "library",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "authors": [
