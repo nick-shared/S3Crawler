@@ -17,7 +17,7 @@ class S3BucketCrawlerCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'mutant:s3-bucket-crawler {--inputfile=}';
+    protected $signature = 'mutant:s3-bucket-crawler {--inputfile=} {';
 
     /**
      * The console command description.
@@ -60,6 +60,7 @@ class S3BucketCrawlerCommand extends Command
                 // Record successful open buckets
                 if ($result->status == 'success') {
                     $properties = get_object_vars($result);
+                    unset($properties['response']);
                     S3openbucket::create($properties);
                     continue;
                 }
@@ -70,7 +71,5 @@ class S3BucketCrawlerCommand extends Command
                 }
             }
         }
-
-
     }
 }
