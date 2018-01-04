@@ -75,12 +75,12 @@ class S3BucketCrawlerCommand extends Command
 
                 // try to performantly prevent dupes(works great on sorted files)
                 // https://stackoverflow.com/questions/18443144/how-to-perform-sort-on-all-files-in-a-directory
-//                if ($word == $last_word) {
-//                    $last_word = $word;
-//                    continue;
-//                } else {
-//                    $last_word = $word;
-//                }
+                if ($word == $last_word) {
+                    $last_word = $word;
+                    continue;
+                } else {
+                    $last_word = $word;
+                }
 
                 $line_number = $input_file->getLineNumber();
                 // run the crawler
@@ -107,15 +107,12 @@ class S3BucketCrawlerCommand extends Command
                         // theres a unique index, so we don't want to check
                         // existence for every request over millions of records with Laravel
                         // Let SQL handle this
-                        S3openbucket::create($properties);
-
-
-//                        try {
-//                            S3openbucket::create($properties);
-//                        } catch (\Throwable $e) {
-//                            continue;
-//                        }
-//                        continue;
+                        try {
+                            S3openbucket::create($properties);
+                        } catch (\Throwable $e) {
+                            continue;
+                        }
+                        continue;
                     }
 
                     // Note: this records failed guzzle connections only
@@ -127,6 +124,7 @@ class S3BucketCrawlerCommand extends Command
                 }
             }
         } catch (\Throwable $e) {
+            // log any failures in the s3crawlerprocess table
             $message = $e->getMessage();
             $s3process->update(['fail_exception' => $message]);
             throw $e;
