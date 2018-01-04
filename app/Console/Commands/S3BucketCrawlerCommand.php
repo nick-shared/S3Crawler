@@ -65,62 +65,72 @@ class S3BucketCrawlerCommand extends Command
 
 
         $last_word = "";
-        //process loop
-        while (!$input_file->eof()) {
+        try {
+            //process loop
+            while (!$input_file->eof()) {
 
-            // get information variables
-            $word = $input_file->getLineDataAndAdvance();
-            $word = trim($word);  //removes all carriage returns, line breaks for comparison purposes
+                // get information variables
+                $word = $input_file->getLineDataAndAdvance();
+                $word = trim($word);  //removes all carriage returns, line breaks for comparison purposes
 
-            // try to performantly prevent dupes(works great on sorted files)
-            // https://stackoverflow.com/questions/18443144/how-to-perform-sort-on-all-files-in-a-directory
-//            if ($word == $last_word) {
-//                $last_word=$word;
-//                continue;
-//            }else{
-//                $last_word=$word;
-//            }
+                // try to performantly prevent dupes(works great on sorted files)
+                // https://stackoverflow.com/questions/18443144/how-to-perform-sort-on-all-files-in-a-directory
+//                if ($word == $last_word) {
+//                    $last_word = $word;
+//                    continue;
+//                } else {
+//                    $last_word = $word;
+//                }
 
-            $line_number = $input_file->getLineNumber();
+                $line_number = $input_file->getLineNumber();
+                // run the crawler
+                $results = $s3crawler->run($word);
 
-            // run the crawler
-            $results = $s3crawler->run($word);
 
-            // process the results
-            foreach ($results as $result) {
-                $current_bucket = $result->bucketname;
+                // process the results
+                foreach ($results as $result) {
+                    $current_bucket = $result->bucketname;
 
-                // update the process log table
-                $s3process->update([
-                    'current_line_number' => $line_number,
-                    'current_word' => $word,
-                    'current_bucket' => $current_bucket
-                ]);
+                    // update the process log table
+                    $s3process->update([
+                        'current_line_number' => $line_number,
+                        'current_word' => $word,
+                        'current_bucket' => $current_bucket
+                    ]);
 
-                // Record successful open buckets
-                if ($result->status == 'success') {
-                    $properties = get_object_vars($result);
-                    unset($properties['response']);
+                    // Record successful open buckets
+                    if ($result->status == 'success') {
+                        $properties = get_object_vars($result);
+                        unset($properties['response']);
 
-                    // note: done this way for theoretical performance reasons
-                    // theres a unique index, so we don't want to check
-                    // existence for every request over millions of records
-                    // Let SQL handle this
-                    try {
+                        // note: done this way for theoretical performance reasons
+                        // theres a unique index, so we don't want to check
+                        // existence for every request over millions of records with Laravel
+                        // Let SQL handle this
                         S3openbucket::create($properties);
-                    }catch(\Throwable $e){
-                        continue;
-                    }
-                    continue;
-                }
 
-                // Note: this records failed guzzle connections only
-                // Recording all closed buckets would get into the hundreds of millions
-                if ($result->guzzle_response_state != 'fulfilled') {
-                    $properties = get_object_vars($result);
-                    S3failbucket::create($properties);
+
+//                        try {
+//                            S3openbucket::create($properties);
+//                        } catch (\Throwable $e) {
+//                            continue;
+//                        }
+//                        continue;
+                    }
+
+                    // Note: this records failed guzzle connections only
+                    // Recording all closed buckets would get into the hundreds of millions
+                    if ($result->guzzle_response_state != 'fulfilled') {
+                        $properties = get_object_vars($result);
+                        S3failbucket::create($properties);
+                    }
                 }
             }
+        } catch (\Throwable $e) {
+            $message = $e->getMessage();
+            $s3process->update(['fail_exception' => $message]);
+            throw $e;
         }
     }
 }
+

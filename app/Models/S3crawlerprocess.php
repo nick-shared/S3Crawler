@@ -25,6 +25,7 @@ class S3crawlerprocess extends Model
         'current_line_number',
         'current_word',
         'current_bucket',
+        'fail_exception',
         'created_at',
         'updated_at'
     ];

@@ -19,6 +19,7 @@ class CreateS3crawlerprocessesTable extends Migration
             $table->string('current_line_number')->nullable();
             $table->string('current_word')->nullable();
             $table->string('current_bucket')->nullable();
+            $table->string('fail_exception')->nullable();
             $table->timestamps();
         });
     }
