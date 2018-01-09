@@ -23,4 +23,5 @@
 ```
 
 
-3. Add `use Mutant\S3Crawler\App\Helpers\S3CrawlerHelper;` to the top of your function.
+3. use `php artisan mutant:s3-bucket-crawler {--inputfile=}` 
+ * Your input file is a line separated word list. There are usable word lists in the wordlist folder of this package.
