@@ -4,7 +4,7 @@
 
 2. `php index.php <namefile>`
 
-#### Usage in Laravel or other frameworks
+#### Usage in Laravel
 
 1. ` composer require  mutant/s3crawler:dev-master `
 
