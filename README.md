@@ -6,7 +6,7 @@
 
 #### Usage in Laravel or other frameworks
 
-1. ` composer require  mutant/s3crawler `
+1. ` composer require  mutant/s3crawler:dev-master `
 
  OR Add this to composer.json and run `composer update mutant/s3crawler`
  
