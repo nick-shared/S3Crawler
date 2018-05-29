@@ -1,3 +1,6 @@
+### S3 Crawler
+* This is an S3 crawler. It crawls the web for open S3 buckets based on what essentially amounts to a brute force url search from a wordlist file.
+
 #### Usage via command line
 
 1. Clone repo and run composer install.
